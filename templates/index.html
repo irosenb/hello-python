@@ -6,9 +6,10 @@
 
 {% block body %}
   <h1>NYC Proptech Events</h1>
-  <p>{{ events[0].fields }}</p>
-  <p>{{ events[0].fields.Name }}</p>
-  <p>{{ events[0].fields.Date }}</p>
-  <p>{{ events[0].fields.Location }}</p>
-  <p>{{ events[0].fields.Organizer }}</p>
+  {% for event in events %}
+    <p>{{ event.fields.Name }}</p>
+    <p>{{ event.fields.Date }}</p>
+    <p>{{ event.fields.Location }}</p>
+    <p>{{ event.fields.Organizer }}</p>
+  {% endfor %}
 {% endblock %}
